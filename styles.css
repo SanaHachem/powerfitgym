@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+      scroll-behavior: smooth;
+}
+
+.header-topo {
+    padding: 10px;
+    background-color: aqua;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.section-planos {
+    height: 40vh;
+    background-color: green;
+}
