@@ -1,4 +1,4 @@
-# Projeto - Site da Empresa  
+# Projeto - Site da Empresa Power Fit GYM
 
 **Empresa:** Four Power Fit LTDA  
 **Instituição:** Fatec Mauá - Informática para Negócios  
