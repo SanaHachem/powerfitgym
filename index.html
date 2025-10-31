@@ -1,34 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power Fit Gym</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Power Fit Gym - Início</title>
+<style>
+  * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+
+  body {
+    background: #121212;
+    color: #f5d670;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 15px 60px;
+  }
+
+  header {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .logo img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 4px #ffdd57);
+  }
+
+  .logo-text {
+    font-weight: 900;
+    font-size: 2.4rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #ffe87d;
+    text-shadow: 0 0 8px #b8860b;
+  }
+
+  /* Menu */
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 10px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #f5d670;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+  }
+
+  nav a:hover {
+    color: #fff280;
+    text-shadow: 0 0 8px #ffd700;
+  }
+
+  /* Seção de planos */
+  #planos {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 40px;
+  }
+
+  .plan-card {
+    flex: 1 1 200px;
+    background: #292929;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+    padding: 25px 20px;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .plan-card:hover { transform: translateY(-6px); }
+
+  .plan-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #ffef8f;
+    text-transform: uppercase;
+  }
+
+  .plan-price {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #fff4c2;
+  }
+
+  .btn-join {
+    background-color: #ffd700;
+    color: #121212;
+    font-weight: 700;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 32px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(255, 215, 0, 0.6);
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-join:hover { background-color: #fff280; }
+
+  /* Contato */
+  #contato {
+    margin-top: 60px;
+    background: #1e1e1e;
+    border-radius: 12px;
+    padding: 20px 25px;
+    box-shadow: 0 0 20px rgba(255,215,0,0.3);
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+  }
+
+  #contato h2 { margin-bottom: 15px; color: #fff5a3; }
+
+  .contact-item {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #f7e48c;
+  }
+
+  #endereco {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #e8d572;
+    font-style: italic;
+  }
+
+  @media (max-width: 600px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      text-align: center;
+    }
+  }
+</style>
 </head>
 <body>
-    <header class="header-topo">
-        <h1>Power Fit Gym</h1>
 
-        <div>
-            <button id="btn-contact">Contatos</button>
-            <a href="#plano-principal">Planos</a>
-        </div>
-    </header>
-    <div class="section-planos">
-        <h2>Planos</h2>
-    </div>
-        <div class="section-planos">
-        <h2>Planos</h2>
-        </div>
-    <div class="section-planos">
-        <h2>Planos</h2>
-    </div>
-    <section id="plano-principal" class="section-planos">
-        <h2>Planos Principal</h2>
-    </section>
-    <footer>
-    </footer>
-</body>
-</html>
+<header>
+  <div class="logo">
+    <img src="img/pngtree-gladiator-spartan-logo-vector-png-image_14013939.png" alt="Power Fit Gym Logo" />
+    <div class="logo-text">Power Fit Gym</div>
+  </div>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="quem-somos.html">Quem Somos</a>
+  </nav>
+</header>
+
+<main>
+  <section id="planos">
+    <article class="plan-card">
+      <h3 class="plan-title">Plano Anual</h3>
+      <p class="plan-price">R$ 74,99 / mês</p>
+      <button class="btn-join" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010', '_blank')">Assinar</button>
+    </article>
+
+    <article class="plan-card">
+      <h3 class="plan-title">Plano Semestral</h3>
+      <p class="plan-price">R$ 79,99 / mês</p>
+      <button class="btn-join" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010', '_blank')">Assinar</button>
+    </article>
+
+    <article class="plan-card">
+      <h3 class="plan-title">Plano Trimestral</h3>
+      <p class="plan-price">R$ 84,99 / mês</p>
+      <button class="btn-join" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010', '_blank')">Assinar</button>
+    </article>
+
+    <article class="plan-card">
+      <h3 class="plan-title">Plano Mensal</h3>
+      <p class="plan-price">R$ 99,99 / mês</p>
+      <button class="btn-join" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010', '_blank')">Assinar</button>
+    </article>
+  </section>
+
+ <section id="contato">
+  <h2>Fale Conosco</h2>
+  <div class="contact-item">📧 fourpowerfit@gmail.com</div>
+  <div class="contact-item">
+    📍 
+    <a href="https://www.google.com/maps/search/?api=1&query=Estrada+do+Carneiro+1853,+São+João,+Mauá,+SP,+09332200" 
+       target="_blank" style="text-decoration:none; color:#f7e48c;">
+      Estrada do Carneiro 1853, São João, Mauá-SP, São Paulo, 09332200
+    </a>
+  </div>
+  <div id="endereco">Aberto de segunda a sábado, das 6h às 22h</div>
+
+  <!-- Instagram -->
+  <div class="contact-item" style="margin-top:15px;">
+    <a href="https://www.instagram.com/powerfitgymoficial" target="_blank" style="text-decoration:none; color:#f5d670;">
+      <img src="img/Instagram_icon.png" alt="Instagram" style="width:30px; height:30px; vertical-align:middle; filter: drop-shadow(0 0 4px #ffdd57); margin-right:8px;">
+      @powerfitgymoficial
+    </a>
+  </div>
+</section>
+
+
