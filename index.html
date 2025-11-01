@@ -6,17 +6,28 @@
   <title>Power Fit Gym - Início</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
+    /* ---- fundo de toda a página usando Midia.jfif ----
+       Verifique que o arquivo está em /img/Midia.jfif com exatamente esse nome */
     body {
-      background: #121212;
+      background-image: url("img/Midia.jfif");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       color: #f5d670;
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 15px 60px;
+      /* colocar leve overlay para legibilidade do texto */
+    }
+    /* overlay para todo o conteúdo (aplica em container principal) */
+    .page-overlay {
+      width: 100%;
+      min-height: 100vh;
+      background: rgba(18,18,18,0.65); /* escurece um pouco por cima da imagem */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -30,269 +41,260 @@
       margin-bottom: 40px;
     }
 
-    .logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .logo img {
-      width: 60px;
-      height: 60px;
-      object-fit: contain;
-      filter: drop-shadow(0 0 4px #ffdd57);
-    }
-
+    .logo { display:flex; justify-content:center; align-items:center; gap:10px; margin-bottom:20px; }
+    .logo img { width:60px; height:60px; object-fit:contain; filter: drop-shadow(0 0 4px #ffdd57); }
     .logo-text {
-      font-weight: 900;
-      font-size: 2.2rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #ffe87d;
-      text-shadow: 0 0 8px #b8860b;
+      font-weight:900; font-size:2.2rem; letter-spacing:3px; text-transform:uppercase;
+      color:#ffe87d; text-shadow:0 0 8px #b8860b;
     }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin-top: 10px;
-    }
+    nav { display:flex; justify-content:center; gap:25px; margin-top:10px; }
+    nav a { text-decoration:none; color:#f5d670; font-weight:700; font-size:1.1rem; text-transform:uppercase; transition:0.3s; }
+    nav a:hover { color:#fff280; text-shadow:0 0 8px #ffd700; }
 
-    nav a {
-      text-decoration: none;
-      color: #f5d670;
-      font-weight: 700;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #fff280;
-      text-shadow: 0 0 8px #ffd700;
-    }
-
-    /* Carrossel */
+    /* ---- Carrossel ---- */
     .carousel-container {
       position: relative;
       width: 100%;
-      max-width: 800px;
+      max-width: 900px;
       overflow: hidden;
       margin-top: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
     }
 
     .carousel-track {
       display: flex;
       transition: transform 0.5s ease-in-out;
+      will-change: transform;
     }
 
     .plan-card {
       flex: 0 0 100%;
-      background: #292929;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
-      padding: 25px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      min-height: 300px;
-      background-size: cover;
-      background-position: center;
+      padding: 28px 22px;
+      min-height: 260px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      position:relative;
     }
 
-    .plan-card:first-child {
-      background-image: url("img/Midia.jfif");
-    }
-
-    .plan-title {
-      font-size: 1.6rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-      color: #ffef8f;
-      text-transform: uppercase;
-      text-shadow: 0 0 8px #000;
-    }
-
-    .plan-price {
-      font-size: 2rem;
-      font-weight: 900;
-      margin-bottom: 10px;
+    /* card content box (com fundo semi-transparente para legibilidade) */
+    .plan-inner {
+      width: 100%;
+      max-width: 720px;
+      background: rgba(41,41,41,0.85);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(255,215,0,0.15);
+      text-align:center;
       color: #fff4c2;
-      text-shadow: 0 0 6px #000;
     }
 
-    .btn-join {
-      background-color: #ffd700;
-      color: #121212;
-      font-weight: 700;
-      border: none;
-      border-radius: 30px;
-      padding: 10px 32px;
-      font-size: 1rem;
-      text-transform: uppercase;
-      cursor: pointer;
-      box-shadow: 0 5px 12px rgba(255, 215, 0, 0.6);
-      transition: background-color 0.3s ease;
-    }
+    .plan-title { font-size:1.6rem; font-weight:800; margin-bottom:8px; color:#ffef8f; text-transform:uppercase; }
+    .plan-price { font-size:2rem; font-weight:900; margin-bottom:14px; color:#fff4c2; }
+    .btn-join { background-color:#ffd700; color:#121212; font-weight:700; border:none; border-radius:30px; padding:10px 32px; font-size:1rem; text-transform:uppercase; cursor:pointer; box-shadow:0 5px 12px rgba(255,215,0,0.6); }
+    .btn-join:hover { background-color:#fff280; }
 
-    .btn-join:hover { background-color: #fff280; }
-
-    /* Botões do carrossel */
+    /* botões do carrossel */
     .carousel-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0,0,0,0.55);
       color: #ffd700;
       border: none;
-      font-size: 2rem;
+      font-size: 1.6rem;
       cursor: pointer;
-      padding: 5px 15px;
+      padding: 8px 12px;
       border-radius: 8px;
-      transition: 0.3s;
+      z-index: 30;
     }
+    .carousel-btn:hover { background: rgba(255,215,0,0.9); color: #121212; }
+    .carousel-btn:focus { outline: 2px solid #ffd700; }
 
-    .carousel-btn:hover {
-      background: rgba(255, 215, 0, 0.8);
-      color: #121212;
+    .prev { left: 12px; }
+    .next { right: 12px; }
+
+    /* indicadores (opcional) */
+    .carousel-indicators {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 10px;
+      display:flex;
+      gap:8px;
+      z-index: 30;
     }
+    .indicator {
+      width:10px; height:10px; border-radius:50%;
+      background: rgba(255,255,255,0.3);
+      cursor:pointer;
+    }
+    .indicator.active { background: #ffd700; }
 
-    .prev { left: 10px; }
-    .next { right: 10px; }
-
-    /* Contato */
+    /* contato e footer */
     #contato {
-      margin-top: 60px;
-      background: #1e1e1e;
+      margin-top: 40px;
+      background: rgba(30,30,30,0.9);
       border-radius: 12px;
       padding: 20px 25px;
-      box-shadow: 0 0 20px rgba(255,215,0,0.3);
+      box-shadow: 0 0 20px rgba(255,215,0,0.18);
       width: 100%;
       max-width: 900px;
       text-align: center;
-    }
-
-    #contato h2 {
-      margin-bottom: 15px;
-      color: #fff5a3;
-    }
-
-    .contact-item {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
       color: #f7e48c;
     }
+    #contato h2 { margin-bottom:15px; color:#fff5a3; }
+    .contact-item { font-size:1.05rem; margin-bottom:10px; color:#f7e48c; }
+    #endereco { margin-top:10px; font-size:1rem; color:#e8d572; font-style:italic; }
+    .social-link img { width:28px; height:28px; object-fit:contain; border-radius:6px; filter: drop-shadow(0 0 3px #ffdd57); }
 
-    #endereco {
-      margin-top: 10px;
-      font-size: 1rem;
-      color: #e8d572;
-      font-style: italic;
-    }
-
-    .social-link img {
-      width: 28px;
-      height: 28px;
-      object-fit: contain;
-      border-radius: 6px;
-      filter: drop-shadow(0 0 3px #ffdd57);
+    @media (max-width: 600px) {
+      .logo-text { font-size: 1.8rem; }
+      .carousel-btn { font-size:1.3rem; padding:6px 10px; }
+      .plan-price { font-size:1.6rem; }
     }
   </style>
 </head>
-
 <body>
-
-  <header>
-    <div class="logo">
-      <img src="img/pngtree-gladiator-spartan-logo-vector-png-image_14013939.png" alt="Power Fit Gym Logo">
-      <div class="logo-text">Power Fit Gym</div>
-    </div>
-
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="quem-somos.html">Quem Somos</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="carousel-container">
-      <div class="carousel-track">
-        <article class="plan-card">
-          <h3 class="plan-title">Plano Anual</h3>
-          <p class="plan-price">R$ 74,99 / mês</p>
-          <button class="btn-join" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010', '_blank')">Assinar</button>
-        </article>
-
-        <article class="plan-card">
-          <h3 class="plan-title">Plano Semestral</h3>
-          <p class="plan-price">R$ 79,99 / mês</p>
-          <button class="btn-join" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010', '_blank')">Assinar</button>
-        </article>
-
-        <article class="plan-card">
-          <h3 class="plan-title">Plano Trimestral</h3>
-          <p class="plan-price">R$ 84,99 / mês</p>
-          <button class="btn-join" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010', '_blank')">Assinar</button>
-        </article>
-
-        <article class="plan-card">
-          <h3 class="plan-title">Plano Mensal</h3>
-          <p class="plan-price">R$ 99,99 / mês</p>
-          <button class="btn-join" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010', '_blank')">Assinar</button>
-        </article>
+  <div class="page-overlay"><!-- overlay que melhora legibilidade sobre a imagem de fundo -->
+    <header>
+      <div class="logo">
+        <img src="img/pngtree-gladiator-spartan-logo-vector-png-image_14013939.png" alt="Power Fit Gym Logo">
+        <div class="logo-text">Power Fit Gym</div>
       </div>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="quem-somos.html">Quem Somos</a>
+      </nav>
+    </header>
 
-      <button class="carousel-btn prev">❮</button>
-      <button class="carousel-btn next">❯</button>
-    </section>
+    <main>
+      <!-- CARROSSEL -->
+      <section class="carousel-container" aria-label="Planos">
+        <div class="carousel-track">
+          <article class="plan-card" data-slide="0">
+            <div class="plan-inner">
+              <h3 class="plan-title">Plano Anual</h3>
+              <p class="plan-price">R$ 74,99 / mês</p>
+              <button class="btn-join" type="button" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010', '_blank')">Assinar</button>
+            </div>
+          </article>
 
-    <section id="contato">
-      <h2>Fale Conosco</h2>
-      <div class="contact-item">📧 fourpowerfit@gmail.com</div>
+          <article class="plan-card" data-slide="1">
+            <div class="plan-inner">
+              <h3 class="plan-title">Plano Semestral</h3>
+              <p class="plan-price">R$ 79,99 / mês</p>
+              <button class="btn-join" type="button" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010', '_blank')">Assinar</button>
+            </div>
+          </article>
 
-      <div class="contact-item">
-        📍 
-        <a href="https://www.google.com/maps/search/?api=1&query=Estrada+do+Carneiro+1853,+São+João,+Mauá,+SP,+09332200" 
-           target="_blank" style="text-decoration:none; color:#f7e48c;">
-          Estrada do Carneiro 1853, São João, Mauá-SP, São Paulo, 09332200
-        </a>
-      </div>
+          <article class="plan-card" data-slide="2">
+            <div class="plan-inner">
+              <h3 class="plan-title">Plano Trimestral</h3>
+              <p class="plan-price">R$ 84,99 / mês</p>
+              <button class="btn-join" type="button" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010', '_blank')">Assinar</button>
+            </div>
+          </article>
 
-      <div id="endereco">Aberto de segunda a sábado, das 6h às 22h</div>
+          <article class="plan-card" data-slide="3">
+            <div class="plan-inner">
+              <h3 class="plan-title">Plano Mensal</h3>
+              <p class="plan-price">R$ 99,99 / mês</p>
+              <button class="btn-join" type="button" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010', '_blank')">Assinar</button>
+            </div>
+          </article>
+        </div>
 
-      <div class="contact-item" style="margin-top:18px;">
-        <a href="https://www.instagram.com/powerfitgymoficial" target="_blank" class="social-link">
-          <img src="img/Instagram_icon.png" alt="Instagram">
-        </a>
-      </div>
-    </section>
-  </main>
+        <button class="carousel-btn prev" type="button" aria-label="Anterior">❮</button>
+        <button class="carousel-btn next" type="button" aria-label="Próximo">❯</button>
+
+        <div class="carousel-indicators" aria-hidden="false"></div>
+      </section>
+
+      <!-- CONTATO -->
+      <section id="contato">
+        <h2>Fale Conosco</h2>
+        <div class="contact-item">📧 fourpowerfit@gmail.com</div>
+
+        <div class="contact-item">
+          📍
+          <a href="https://www.google.com/maps/search/?api=1&query=Estrada+do+Carneiro+1853,+São+João,+Mauá,+SP,+09332200"
+             target="_blank" style="text-decoration:none; color:#f7e48c;">
+            Estrada do Carneiro 1853, São João, Mauá-SP, São Paulo, 09332200
+          </a>
+        </div>
+
+        <div id="endereco">Aberto de segunda a sábado, das 6h às 22h</div>
+
+        <div class="contact-item" style="margin-top:18px;">
+          <a href="https://www.instagram.com/powerfitgymoficial" target="_blank" class="social-link">
+            <img src="img/Instagram_icon.png" alt="Instagram">
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
 
   <script>
-    const track = document.querySelector('.carousel-track');
-    const prev = document.querySelector('.prev');
-    const next = document.querySelector('.next');
-    const cards = document.querySelectorAll('.plan-card');
-    let index = 0;
+    // CARROSSEL - código robusto com indicadores e checagens
+    (function() {
+      const track = document.querySelector('.carousel-track');
+      const slides = Array.from(document.querySelectorAll('.plan-card'));
+      const prevBtn = document.querySelector('.carousel-btn.prev');
+      const nextBtn = document.querySelector('.carousel-btn.next');
+      const indicatorsContainer = document.querySelector('.carousel-indicators');
+      let index = 0;
 
-    function updateCarousel() {
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
+      if (!track || slides.length === 0 || !prevBtn || !nextBtn) {
+        console.warn('Carrossel: elementos não encontrados');
+        return;
+      }
 
-    next.addEventListener('click', () => {
-      index = (index + 1) % cards.length;
-      updateCarousel();
-    });
+      // cria indicadores
+      slides.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.className = 'indicator' + (i === 0 ? ' active' : '');
+        dot.dataset.index = i;
+        indicatorsContainer.appendChild(dot);
+      });
 
-    prev.addEventListener('click', () => {
-      index = (index - 1 + cards.length) % cards.length;
-      updateCarousel();
-    });
+      const indicators = Array.from(document.querySelectorAll('.indicator'));
+
+      function update() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+        indicators.forEach((dot, i) => dot.classList.toggle('active', i === index));
+      }
+
+      nextBtn.addEventListener('click', () => {
+        index = (index + 1) % slides.length;
+        update();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        index = (index - 1 + slides.length) % slides.length;
+        update();
+      });
+
+      // click nos indicadores
+      indicators.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+          index = Number(e.currentTarget.dataset.index);
+          update();
+        });
+      });
+
+      // teclado (setas)
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') nextBtn.click();
+        if (e.key === 'ArrowLeft') prevBtn.click();
+      });
+
+      // inicial
+      update();
+    })();
   </script>
-
 </body>
 </html>
