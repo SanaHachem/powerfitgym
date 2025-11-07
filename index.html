@@ -1,272 +1,286 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Power Fit Gym - Início</title>
-
-  <style>
-    /* reset / base */
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{
-      background:#121212;
-      color:#f5d670;
-      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display:flex;
-      justify-content:flex-start;
-      align-items:flex-start;
-      padding:28px;
-    }
-
-    /* container central */
-    .site {
-      width:100%;
-      max-width:980px;
-      margin:0 auto;
-    }
-
-    header {
-      text-align:center;
-      margin-bottom:26px;
-    }
-    .logo {
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-    }
-    .logo img{ width:54px; height:54px; object-fit:contain; filter: drop-shadow(0 0 4px #ffdd57); }
-    .logo-text{ font-weight:900; font-size:2rem; color:#ffe87d; letter-spacing:2px; text-shadow:0 0 6px #b8860b; }
-
-    nav{ margin-top:8px; }
-    nav a{ color:#f5d670; text-decoration:none; font-weight:700; margin:0 12px; font-size:0.95rem; text-transform:uppercase; }
-    nav a:hover{ color:#fff280; }
-
-    /* CARROSSEL (hero) */
-    .carousel {
-      position:relative;
-      width:100%;
-      border-radius:12px;
-      overflow:hidden;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.55);
-      background:#2a2a2a;
-    }
-    .carousel-track {
-      display:flex;
-      transition:transform .55s ease;
-      will-change:transform;
-    }
-    .slide {
-      flex:0 0 100%;
-      min-height:300px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background-size:cover;
-      background-position:center;
-      position:relative;
-    }
-
-    /* caixa interna do conteúdo (mantém legibilidade) */
-    .slide-box {
-      width:92%;
-      max-width:720px;
-      background:rgba(16,16,16,0.75);
-      padding:22px;
-      border-radius:10px;
-      text-align:center;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.6);
-      color:#fff4c2;
-    }
-    .slide h3{ font-size:1.45rem; color:#ffef8f; letter-spacing:1px; margin-bottom:8px; text-transform:uppercase; }
-    .slide p.price{ font-size:1.95rem; font-weight:800; margin-bottom:14px; color:#fff4c2; text-shadow:0 2px 8px rgba(0,0,0,0.5) }
-    .btn-join{ background:#ffd700; color:#121212; padding:10px 28px; border-radius:28px; border:none; font-weight:800; cursor:pointer; box-shadow:0 4px 10px rgba(255,215,0,0.25) }
-    .btn-join:hover{ background:#fff280; }
-
-    /* botões laterais do carrossel */
-    .btn-prev, .btn-next {
-      position:absolute;
-      top:50%;
-      transform:translateY(-50%);
-      width:40px;
-      height:40px;
-      border-radius:8px;
-      border:none;
-      background:rgba(10,10,10,0.65);
-      color:#ffd700;
-      font-size:20px;
-      cursor:pointer;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      z-index:20;
-      box-shadow:0 6px 14px rgba(0,0,0,0.5);
-    }
-    .btn-prev{ left:12px }
-    .btn-next{ right:12px }
-    .btn-prev:hover,.btn-next:hover{ background:rgba(255,215,0,0.92); color:#121212 }
-
-    /* indicadores */
-    .indicators {
-      position:absolute;
-      bottom:10px;
-      left:50%;
-      transform:translateX(-50%);
-      display:flex;
-      gap:8px;
-      z-index:22;
-    }
-    .dot {
-      width:10px; height:10px; border-radius:50%;
-      background:rgba(255,255,255,0.25);
-      cursor:pointer;
-    }
-    .dot.active{ background:#ffd700; }
-
-    /* seção contato (compacta) */
-    #contato {
-      margin-top:22px;
-      background:rgba(20,20,20,0.9);
-      padding:18px;
-      border-radius:10px;
-      color:#f7e48c;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.55);
-      text-align:center;
-    }
-    #contato h2{ color:#fff5a3; margin-bottom:8px }
-    #contato p{ margin:8px 0; font-size:0.98rem }
-    .social-link img{ width:30px; height:30px; object-fit:contain; filter: drop-shadow(0 0 4px #ffdd57) }
-
-    /* responsivo */
-    @media (max-width:640px){
-      .slide{ min-height:220px }
-      .slide-box{ padding:16px }
-      .logo-text{ font-size:1.45rem }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Power Fit Gym - Início</title>
+ 
+ 
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+ 
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+ 
+  body {
+    background: url('img/imagem_academia.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #f5d670;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 15px 60px;
+  }
+ 
+  header {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+ 
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+ 
+  .logo img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 4px #ffdd57);
+  }
+ 
+  .logo-text {
+    font-weight: 900;
+    font-size: 2.4rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #ffe87d;
+    text-shadow: 0 0 8px #b8860b;
+  }
+ 
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 10px;
+  }
+ 
+  nav a {
+    text-decoration: none;
+    color: #f5d670;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+  }
+ 
+  nav a:hover {
+    color: #fff280;
+    text-shadow: 0 0 8px #ffd700;
+  }
+ 
+  #planos {
+    width: 100%;
+    max-width: 700px;
+    margin-top: 40px;
+  }
+ 
+  .plan-card {
+    background: rgba(41, 41, 41, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+ 
+  .plan-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #ffef8f;
+    text-transform: uppercase;
+  }
+ 
+  .plan-price {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #fff4c2;
+  }
+ 
+  .btn-join {
+    background-color: #ffd700;
+    color: #121212;
+    font-weight: 700;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 32px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(255, 215, 0, 0.6);
+    transition: background-color 0.3s ease;
+  }
+ 
+  .btn-join:hover {
+    background-color: #fff280;
+  }
+ 
+  #contato {
+    margin-top: 60px;
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 12px;
+    padding: 20px 25px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+  }
+ 
+  #contato h2 {
+    margin-bottom: 15px;
+    color: #fff5a3;
+  }
+ 
+  .contact-item {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #f7e48c;
+  }
+ 
+  #endereco {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #e8d572;
+    font-style: italic;
+  }
+</style>
 </head>
+ 
 <body>
-  <div class="site">
-    <header>
-      <div class="logo">
-        <img src="img/pngtree-gladiator-spartan-logo-vector-png-image_14013939.png" alt="logo">
-        <div class="logo-text">POWER FIT GYM</div>
-      </div>
-      <nav>
-        <a href="index.html">Início</a>
-        <a href="quem-somos.html">Quem Somos</a>
-      </nav>
-    </header>
-
-    <!-- CARROSSEL -->
-    <section class="carousel" aria-label="Planos">
-      <div class="carousel-track">
-        <!-- SLIDE 1: Midia.jfif como fundo -->
-        <div class="slide" style="background-image:url('img/Midia.jfif')">
-          <div class="slide-box">
-            <h3>Plano Anual</h3>
-            <p class="price">R$ 74,99 / mês</p>
-            <button class="btn-join" type="button" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010','_blank')">ASSINAR</button>
-          </div>
-        </div>
-
-        <!-- SLIDE 2: cor ou outra imagem -->
-        <div class="slide" style="background-image:url('img/pngtree-gladiator-spartan-logo-vector-png-image_14013939.png'); background-blend-mode:overlay; background-color: rgba(0,0,0,0.55);">
-          <div class="slide-box">
-            <h3>Plano Semestral</h3>
-            <p class="price">R$ 79,99 / mês</p>
-            <button class="btn-join" type="button" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010','_blank')">ASSINAR</button>
-          </div>
-        </div>
-
-        <!-- SLIDE 3 -->
-        <div class="slide" style="background:linear-gradient(180deg, rgba(40,40,40,0.6), rgba(16,16,16,0.8));">
-          <div class="slide-box">
-            <h3>Plano Trimestral</h3>
-            <p class="price">R$ 84,99 / mês</p>
-            <button class="btn-join" type="button" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010','_blank')">ASSINAR</button>
-          </div>
-        </div>
-
-        <!-- SLIDE 4 -->
-        <div class="slide" style="background:linear-gradient(180deg, rgba(50,40,30,0.4), rgba(20,20,20,0.8));">
-          <div class="slide-box">
-            <h3>Plano Mensal</h3>
-            <p class="price">R$ 99,99 / mês</p>
-            <button class="btn-join" type="button" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010','_blank')">ASSINAR</button>
-          </div>
-        </div>
-      </div>
-
-      <button class="btn-prev" aria-label="Anterior" type="button">‹</button>
-      <button class="btn-next" aria-label="Próximo" type="button">›</button>
-
-      <div class="indicators" aria-hidden="false"></div>
-    </section>
-
-    <!-- CONTATO -->
-    <section id="contato">
-      <h2>Fale Conosco</h2>
-      <p>📧 fourpowerfit@gmail.com</p>
-      <p>📍 Estrada do Carneiro 1853, São João, Mauá-SP, São Paulo, 09332200</p>
-      <p style="font-style:italic; color:#e8d572;">Aberto de segunda a sábado, das 6h às 22h</p>
-      <p style="margin-top:8px;">
-        <a href="https://www.instagram.com/powerfitgymoficial" target="_blank" style="text-decoration:none;">
-          <img src="img/Instagram_icon.png" alt="Instagram">
-        </a>
-      </p>
-    </section>
+<header>
+  <div class="logo">
+    <img
+      src="img/pngtree-gladiator-spartan-logo-vector-png-image_14013939.png"
+      alt="Power Fit Gym Logo"
+    />
+    <div class="logo-text">Power Fit Gym</div>
   </div>
-
-  <script>
-    // Carrossel simples e robusto
-    (function(){
-      const track = document.querySelector('.carousel-track');
-      const slides = Array.from(document.querySelectorAll('.slide'));
-      const prev = document.querySelector('.btn-prev');
-      const next = document.querySelector('.btn-next');
-      const indicatorsWrap = document.querySelector('.indicators');
-      let idx = 0;
-
-      if (!track || slides.length === 0) return;
-
-      // criar indicadores
-      slides.forEach((_, i) => {
-        const dot = document.createElement('div');
-        dot.className = 'dot' + (i===0 ? ' active' : '');
-        dot.dataset.index = i;
-        indicatorsWrap.appendChild(dot);
-      });
-      const dots = Array.from(indicatorsWrap.children);
-
-      function update() {
-        track.style.transform = `translateX(-${idx * 100}%)`;
-        dots.forEach((d,i) => d.classList.toggle('active', i === idx));
-      }
-
-      next.addEventListener('click', () => {
-        idx = (idx + 1) % slides.length;
-        update();
-      });
-
-      prev.addEventListener('click', () => {
-        idx = (idx - 1 + slides.length) % slides.length;
-        update();
-      });
-
-      dots.forEach(d => {
-        d.addEventListener('click', (e) => {
-          idx = Number(e.currentTarget.dataset.index);
-          update();
-        });
-      });
-
-      // setInterval (opcional) para autoplay leve (desativado por padrão)
-      // let auto = setInterval(()=> { idx=(idx+1)%slides.length; update(); }, 6000);
-      // pausa no hover
-      // document.querySelector('.carousel').addEventListener('mouseenter', ()=> clearInterval(auto));
-      // document.querySelector('.carousel').addEventListener('mouseleave', ()=> auto = setInterval(()=> { idx=(idx+1)%slides.length; update(); }, 6000));
-    })();
-  </script>
+ 
+  <nav>
+  <a href="index.html">Início</a>
+  <a href="quem-somos.html">Quem Somos</a>
+  <a href="missao-valores.html">Missão e Valores</a>
+</nav>
+ 
+</header>
+ 
+<main>
+  <section id="planos">
+    <div id="carouselPlanos" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+ 
+        <div class="carousel-item active">
+          <article class="plan-card">
+            <h3 class="plan-title">Plano Anual</h3>
+            <p class="plan-price">R$ 74,99 / mês</p>
+            <button class="btn-join" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010', '_blank')">Assinar</button>
+          </article>
+        </div>
+ 
+        <div class="carousel-item">
+          <article class="plan-card">
+            <h3 class="plan-title">Plano Semestral</h3>
+            <p class="plan-price">R$ 79,99 / mês</p>
+            <button class="btn-join" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010', '_blank')">Assinar</button>
+          </article>
+        </div>
+ 
+        <div class="carousel-item">
+          <article class="plan-card">
+            <h3 class="plan-title">Plano Trimestral</h3>
+            <p class="plan-price">R$ 84,99 / mês</p>
+            <button class="btn-join" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010', '_blank')">Assinar</button>
+          </article>
+        </div>
+ 
+        <div class="carousel-item">
+          <article class="plan-card">
+            <h3 class="plan-title">Plano Mensal</h3>
+            <p class="plan-price">R$ 99,99 / mês</p>
+            <button class="btn-join" onclick="window.open('https://web.whatsapp.com/send?phone=5511963787010', '_blank')">Assinar</button>
+          </article>
+        </div>
+ 
+      </div>
+ 
+      <!-- Controles do Carrossel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselPlanos" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselPlanos" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </div>
+  </section>
+ 
+  <section id="contato">
+    <h2>Fale Conosco</h2>
+    <div class="contact-item">📧 fourpowerfit@gmail.com</div>
+    <div class="contact-item">
+      📍
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=Estrada+do+Carneiro+1853,+São+João,+Mauá,+SP,+09332200"
+        target="_blank"
+        style="text-decoration: none; color: #f7e48c"
+      >
+        Estrada do Carneiro 1853, São João, Mauá-SP, São Paulo, 09332200
+      </a>
+    </div>
+    <div id="endereco">Aberto de segunda a sábado, das 6h às 22h</div>
+ 
+    <div class="contact-item" style="margin-top: 15px">
+      <a
+        href="https://www.instagram.com/academia_powerfitgym?igsh=MTNidHRtNzQ5OWhubw=="
+        target="_blank"
+        style="text-decoration: none; color: #f5d670"
+      >
+        <img
+          src="img/Instagram_icon.png"
+          alt="Instagram"
+          style="width: 30px; height: 30px; vertical-align: middle; filter: drop-shadow(0 0 4px #ffdd57); margin-right: 8px;"
+        />
+        @powerfitgymoficial
+      </a>
+    </div>
+ 
+    <div class="contact-item" style="margin-top: 10px">
+      <a
+        href="https://web.whatsapp.com/send?phone=5511963787010"
+        target="_blank"
+        style="text-decoration: none; color: #f5d670"
+      >
+        <img
+          src="img/WhatsApp.svg.png"
+          alt="WhatsApp"
+          style="width: 30px; height: 30px; vertical-align: middle; filter: drop-shadow(0 0 4px #25D366); margin-right: 8px;"
+        />
+        (11) 96378-7010
+      </a>
+    </div>
+  </section>
+</main>
+ 
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+ 
