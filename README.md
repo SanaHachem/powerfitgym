@@ -20,7 +20,7 @@
 - Josafá de Sousa  
 - Lucas Silveira  
 - Sana Hachem  
-- William José  
+- Willian José
 
 ---
 
