@@ -9,7 +9,6 @@
 - Administração Geral: Prof. Jairo Gonçalves Duarte  
 
 ---
-
 ## Grupo  
 
 - Caroline Farias  
